@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-single-form',
@@ -6,13 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./single-form.component.scss'],
 })
 export class SingleFormComponent implements OnInit {
-  userName: string = '';
+  user: User = new User();
+  firstName = new FormControl('');
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  toUpper() {
-    this.userName = this.userName.toUpperCase();
+  onSubmit() {
+    if (this.areAllFieldsValid()) {
+      alert('form submitted');
+    } else {
+      console.log('form has invalid fields');
+    }
+  }
+
+  areAllFieldsValid(): boolean {
+    let result = false;
+
+    result = this.firstName.errors === null;
+
+    console.log('result is', result);
+    return result;
   }
 }

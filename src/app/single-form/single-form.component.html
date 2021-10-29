@@ -1,34 +1,32 @@
-<!-- <div>
-  <button pButton type="button" label="Native with Directive"></button>
-  <p-button label="Component" (click)="toUpper()"></p-button>
-
-  <span class="p-float-label">
-    <input id="float-input" type="text" pInputText [(ngModel)]="userName">
-    <label for="float-input">Username</label>
-  </span>
-  <p>Username = {{userName}}</p>
-</div> -->
-
 <div class="grid">
-  <div class="col-2">
-    <div class="p-field">
+  <div class="col-3">
+    <div class="field">
       <label for="name">First Name</label>
-      <input type="text" pInputText id="name" required autofocus />
-      <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
+      <input type="text" pInputText id="name" required minlength="4" autofocus [(ngModel)]="user.firstName"
+        #firstName="ngModel" />
+      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+        <div *ngIf="firstName.errors?.required">
+          <small class="p-error">Name is required.</small>
+        </div>
+        <div *ngIf="firstName.errors?.minlength">
+          <small class="p-error">Name must be at least 4 characters long.</small>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-6">
-    <div class="p-field">
+  <div class="col-4">
+    <div class="field">
       <label for="name">Last Name</label>
       <input type="text" pInputText id="name" required autofocus />
       <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
     </div>
   </div>
-  <div class="col-4">
-    <div class="p-field">
+  <div class="col-2">
+    <div class="field">
       <label for="name">Surname</label>
       <input type="text" pInputText id="name" required autofocus />
       <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
     </div>
   </div>
 </div>
+<p-button label="Submit" (click)="onSubmit()"></p-button>
