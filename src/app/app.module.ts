@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GroupFormComponent } from './group-form/group-form.component';
 import { SingleFormComponent } from './single-form/single-form.component';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [AppComponent, SingleFormComponent, GroupFormComponent],
@@ -16,6 +17,7 @@ import { SingleFormComponent } from './single-form/single-form.component';
     ButtonModule,
     InputTextModule,
     FormsModule,
+    InputNumberModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

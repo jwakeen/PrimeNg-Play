@@ -10,6 +10,8 @@ import { User } from '../models/user';
 export class SingleFormComponent implements OnInit {
   user: User = new User();
   firstName = new FormControl('');
+  lastName = new FormControl('');
+  age = new FormControl('');
 
   constructor() {}
 
@@ -26,7 +28,10 @@ export class SingleFormComponent implements OnInit {
   areAllFieldsValid(): boolean {
     let result = false;
 
-    result = this.firstName.errors === null;
+    result =
+      this.firstName.errors === null &&
+      this.lastName.errors === null &&
+      this.age.errors === null;
 
     console.log('result is', result);
     return result;

@@ -2,7 +2,7 @@
   <div class="col-3">
     <div class="field">
       <label for="name">First Name</label>
-      <input type="text" pInputText id="name" required minlength="4" autofocus [(ngModel)]="user.firstName"
+      <input type="text" pInputText id="firstname" required minlength="4" autofocus [(ngModel)]="user.firstName"
         #firstName="ngModel" />
       <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
         <div *ngIf="firstName.errors?.required">
@@ -14,19 +14,29 @@
       </div>
     </div>
   </div>
+
   <div class="col-4">
     <div class="field">
       <label for="name">Last Name</label>
-      <input type="text" pInputText id="name" required autofocus />
-      <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
+      <input type="text" pInputText id="lastname" required minlength="4" autofocus [(ngModel)]="user.lastName"
+        #lastName="ngModel" />
+      <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+        <div *ngIf="lastName.errors?.required">
+          <small class="p-error">Name is required.</small>
+        </div>
+        <div *ngIf="lastName.errors?.minlength">
+          <small class="p-error">Name must be at least 4 characters long.</small>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-2">
+
+  <div class="col-1">
     <div class="field">
-      <label for="name">Surname</label>
-      <input type="text" pInputText id="name" required autofocus />
-      <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
+      <label for="name">Age</label>
+      <p-inputNumber [min]="1" [max]="120" [(ngModel)]="user.age"></p-inputNumber>
     </div>
   </div>
 </div>
+
 <p-button label="Submit" (click)="onSubmit()"></p-button>
