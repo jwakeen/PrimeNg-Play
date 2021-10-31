@@ -1,0 +1,31 @@
+<div>
+  <div>
+    <label for="firstName">First Name: </label>
+    <input id="firstName" type="text" [formControl]="firstName">
+    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+      <small *ngIf="firstName.errors?.required">
+            First name is required.
+        </small>
+      <small *ngIf="firstName.errors?.minlength">
+          First name must be at least 4 characters long.
+        </small>
+    </div>
+    <p>Value: {{ firstName.value }}</p>
+  </div>
+  <button (click)="updateFirstName()">Update First Name</button>
+</div>
+
+<div>
+  <label for="lastName">Last Name: </label>
+  <input id="lastName" type="text" [formControl]="lastName">
+  <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+    <small *ngIf="lastName.errors?.required">
+          Last name is required.
+      </small>
+    <small *ngIf="lastName.errors?.minlength">
+        Last name must be at least 4 characters long.
+      </small>
+  </div>
+  <p>Value: {{ lastName.value }}</p>
+</div>
+<button type="submit" (click)="onSubmit()" [disabled]="!areAllControlsValid()">Submit</button>

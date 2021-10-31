@@ -6,10 +6,10 @@
         #firstName="ngModel" />
       <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
         <div *ngIf="firstName.errors?.required">
-          <small class="p-error">Name is required.</small>
+          <small class="p-error">First name is required.</small>
         </div>
         <div *ngIf="firstName.errors?.minlength">
-          <small class="p-error">Name must be at least 4 characters long.</small>
+          <small class="p-error">First name must be at least 4 characters long.</small>
         </div>
       </div>
     </div>
@@ -22,10 +22,10 @@
         #lastName="ngModel" />
       <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
         <div *ngIf="lastName.errors?.required">
-          <small class="p-error">Name is required.</small>
+          <small class="p-error">Last name is required.</small>
         </div>
         <div *ngIf="lastName.errors?.minlength">
-          <small class="p-error">Name must be at least 4 characters long.</small>
+          <small class="p-error">Last name must be at least 4 characters long.</small>
         </div>
       </div>
     </div>

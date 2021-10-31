@@ -8,9 +8,12 @@ import { AppComponent } from './app.component';
 import { GroupFormComponent } from './group-form/group-form.component';
 import { SingleFormComponent } from './single-form/single-form.component';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NativeReactiveFormComponent } from './native-reactive-form/native-reactive-form.component';
+import { NativeReactiveGroupFormComponent } from './native-reactive-group-form/native-reactive-group-form.component';
 
 @NgModule({
-  declarations: [AppComponent, SingleFormComponent, GroupFormComponent],
+  declarations: [AppComponent, SingleFormComponent, GroupFormComponent, NativeReactiveFormComponent, NativeReactiveGroupFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,6 +21,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     InputTextModule,
     FormsModule,
     InputNumberModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
