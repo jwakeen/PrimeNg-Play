@@ -1,1 +1,57 @@
-<p>group-form works!</p>
+<form [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+  <div class="grid">
+    <div class="col-3">
+      <div class="field">
+        <label for="name">First Name</label>
+        <input type="text" pInputText id="firstname" autofocus formControlName="firstName" />
+        <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
+          <div *ngIf="firstName?.errors?.required">
+            <small class="p-error">First name is required.</small>
+          </div>
+          <div *ngIf="firstName?.errors?.minlength">
+            <small class="p-error">First name must be at least 3 characters long.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="field">
+        <label for="name">Last Name</label>
+        <input type="text" pInputText id="lastname" autofocus formControlName="lastName" />
+        <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+          <div *ngIf="lastName?.errors?.required">
+            <small class="p-error">Last name is required.</small>
+          </div>
+          <div *ngIf="lastName?.errors?.minlength">
+            <small class="p-error">Last name must be at least 4 characters long.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="text" pInputText id="email" autofocus formControlName="email" />
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <div *ngIf="email?.errors?.required">
+            <small class="p-error">Email is required.</small>
+          </div>
+          <div *ngIf="email?.errors?.email">
+            <small class="p-error">Email must be a valid email.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-1">
+      <div class="field">
+        <label for="name">Age</label>
+        <p-inputNumber [min]="1" [max]="120" formControlName="age"></p-inputNumber>
+      </div>
+    </div>
+  </div>
+
+  <p-button label="Submit" [disabled]="!nameForm.valid" (click)="onSubmit()"></p-button>
+</form>

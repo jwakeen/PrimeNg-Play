@@ -22,8 +22,8 @@ export class NativeReactiveGroupFormComponent implements OnInit {
 
   updateNames() {
     this.nameForm.patchValue({
-      firstName: 'Jim',
-      lastName: 'Wakeen',
+      firstName: 'Joe',
+      lastName: 'Quin',
     });
   }
 
