@@ -9,7 +9,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./group-form.component.scss'],
 })
 export class GroupFormComponent implements OnInit {
-  user!: User;
+  user: User | undefined;
   nameForm = this.fb.group({
     // This field is not displayed, but the model must match the FormGroup's schema.
     id: [''],
@@ -22,9 +22,9 @@ export class GroupFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.getUserById(11).subscribe((u) => {
+    this.userService.getUserById(8).subscribe((u) => {
       this.user = u;
-      this.nameForm.setValue(u);
+      this.nameForm.setValue(this.user);
     });
   }
 
