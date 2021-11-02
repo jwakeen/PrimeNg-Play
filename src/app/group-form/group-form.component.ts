@@ -48,6 +48,10 @@ export class GroupFormComponent implements OnInit {
     console.log(this.nameForm.value);
 
     // Actually submit the user to a service.
+    this.userService.updateUser(this.nameForm.value).subscribe((u) => {
+      this.user = u;
+      this.nameForm.setValue(this.user);
+    });
 
     alert('Submitted');
   }

@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core';
-import { EMPTY, Observable, of } from 'rxjs';
-import { User } from '../models/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
   private uri = 'https://jsonplaceholder.typicode.com/users';
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
 
   constructor(private http: HttpClient) {}
 
@@ -34,6 +37,15 @@ export class UserService {
     );
   }
 
+  updateUser(user: User): Observable<User> {
+    return this.http
+      .put<User>(`${this.uri}/${user.id}`, user, this.httpOptions)
+      .pipe(
+        tap((_) => console.log(`updated user ${user.id}`)),
+        catchError(this.handleError<User>('updateUser'))
+      );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
@@ -43,9 +55,3 @@ export class UserService {
     };
   }
 }
-
-// const Users: User[] = [
-//   { id: 11, firstName: 'Nice', lastName: 'Guys', age: 11, email: '' },
-//   { id: 11, firstName: 'Doc', lastName: 'Holliday', age: 12, email: '' },
-//   { id: 11, firstName: 'Billy', lastName: 'Kidd', age: 13, email: '' },
-// ];
