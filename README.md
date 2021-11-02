@@ -1,5 +1,12 @@
 # PrimeNgPlay
 
+This project is my experimentation with primeng. It uses the users from https://jsonplaceholder.typicode.com/users and has service methods for getAllUsers, getUserById, and UpdateUser. It includes the following types of components:
+
+- A native angular form with validation
+- A native angular group form with FormBuilder and validation
+- A reactive primeng form with primeflex layout and validation
+- A reactive primeng group form with FormBuilder, primeflex layout and validation
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
 
 ## Development server
