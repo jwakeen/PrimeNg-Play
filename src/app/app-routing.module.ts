@@ -4,6 +4,7 @@ import { GroupFormComponent } from './group-form/group-form.component';
 import { NativeReactiveFormComponent } from './native-reactive-form/native-reactive-form.component';
 import { NativeReactiveGroupFormComponent } from './native-reactive-group-form/native-reactive-group-form.component';
 import { SingleFormComponent } from './single-form/single-form.component';
+import { VarietyFormComponent } from './variety-form/variety-form.component';
 
 const routes: Routes = [
   { path: 'single-form', component: SingleFormComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
     path: 'native-reactive-group-form',
     component: NativeReactiveGroupFormComponent,
   },
+  { path: 'variety-form', component: VarietyFormComponent },
 ];
 
 @NgModule({

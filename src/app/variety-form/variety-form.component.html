@@ -1,0 +1,59 @@
+<form [formGroup]="varietyForm" (ngSubmit)="onSubmit()">
+  <div class="grid">
+    <div class="col-6">
+      <div class="field">
+        <label for="email">Email</label>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+          <input type="text" pInputText id="email" autofocus formControlName="email" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-1">
+      <div class="field">
+        <label for="name">Age</label>
+        <!-- <p-inputNumber [min]="1" [max]="120" formControlName="age" [inputStyle]="{'width':'100%'}"></p-inputNumber> -->
+        <p-inputNumber [min]="1" [max]="120" formControlName="age" inputStyleClass="width-100"></p-inputNumber>
+        <!-- <p-inputNumber [min]="1" [max]="120" formControlName="age" styleClass="w-full"></p-inputNumber> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-6">
+      <div class="field">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+          <input type="text" pInputText placeholder="Email">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="field">
+        <div class="p-inputgroup">
+          <input type="text" pInputText placeholder="Keyword">
+          <button type="button" pButton pRipple icon="pi pi-refresh" styleClass="p-button-warn"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-2">
+      <div class="field">
+        <p-dropdown [options]="cities" placeholder="Select a City" optionLabel="label"></p-dropdown>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="field">
+        <p-listbox [options]="cities" optionLabel="label"></p-listbox>
+      </div>
+    </div>
+  </div>
+
+  <p-button type="submit" label="Submit" [disabled]="!varietyForm.valid"></p-button>
+
+</form>
