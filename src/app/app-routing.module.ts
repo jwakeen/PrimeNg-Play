@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CustomFormComponent } from './custom-form/custom-form.component';
 import { GroupFormComponent } from './group-form/group-form.component';
 import { NativeReactiveFormComponent } from './native-reactive-form/native-reactive-form.component';
 import { NativeReactiveGroupFormComponent } from './native-reactive-group-form/native-reactive-group-form.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
     component: NativeReactiveGroupFormComponent,
   },
   { path: 'variety-form', component: VarietyFormComponent },
+  { path: 'custom-form', component: CustomFormComponent },
 ];
 
 @NgModule({

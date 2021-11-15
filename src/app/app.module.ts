@@ -15,6 +15,8 @@ import { NativeReactiveGroupFormComponent } from './native-reactive-group-form/n
 import { SingleFormComponent } from './single-form/single-form.component';
 import { VarietyFormComponent } from './variety-form/variety-form.component';
 import { ListboxModule } from 'primeng/listbox';
+import { CustomFormComponent } from './custom-form/custom-form.component';
+import { CustomComponent } from './custom/custom.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ListboxModule } from 'primeng/listbox';
     NativeReactiveFormComponent,
     NativeReactiveGroupFormComponent,
     VarietyFormComponent,
+    CustomFormComponent,
+    CustomComponent,
   ],
   imports: [
     BrowserModule,
