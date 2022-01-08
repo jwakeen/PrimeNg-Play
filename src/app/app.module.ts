@@ -17,6 +17,7 @@ import { VarietyFormComponent } from './variety-form/variety-form.component';
 import { ListboxModule } from 'primeng/listbox';
 import { CustomFormComponent } from './custom-form/custom-form.component';
 import { CustomComponent } from './custom/custom.component';
+import { StatesDropdownComponent } from './states-dropdown/states-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CustomComponent } from './custom/custom.component';
     VarietyFormComponent,
     CustomFormComponent,
     CustomComponent,
+    StatesDropdownComponent,
   ],
   imports: [
     BrowserModule,

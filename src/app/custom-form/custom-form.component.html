@@ -1,3 +1,9 @@
 <!-- This says to bind the property named value in the app-custom component to the value of count
 in this component (custom-form). -->
 <app-custom [value]="count" (valueChanged)="onValueChanged($event)"></app-custom>
+
+<!-- This says to bind the property named selectedState in the app-states-dropdown component to the value of selectedState
+in this component (custom-form). -->
+<app-states-dropdown [selectedState]="selectedState" (onStateSelected)="onStateSelected($event)"></app-states-dropdown>
+
+<p-button label="Submit" (click)="onSubmit()"></p-button>
