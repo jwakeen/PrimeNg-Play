@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomFormComponent implements OnInit {
   count: number = 5;
-  selectedState: string = 'Iowa';
+  selectedState: string = '';
 
   constructor() {}
 
@@ -19,12 +19,22 @@ export class CustomFormComponent implements OnInit {
   }
 
   onStateSelected(event: string) {
-    console.log(event);
+    console.log('onStateSelected: ', event);
     this.selectedState = event;
   }
 
-  onSubmit() {
-    console.log(this.selectedState);
-    this.selectedState = 'Ohio';
+  onMississippi() {
+    this.onStateSelected('Mississippi');
+    console.log('onMississippi: ', this.selectedState);
+  }
+
+  onNebraska() {
+    this.onStateSelected('Nebraska');
+    console.log('onNebraska: ', this.selectedState);
+  }
+
+  onOhio() {
+    this.onStateSelected('Ohio');
+    console.log('onOhio: ', this.selectedState);
   }
 }
