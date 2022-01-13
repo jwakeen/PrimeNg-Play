@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./states-dropdown.component.scss'],
 })
 export class StatesDropdownComponent implements OnInit {
-  @Input() selectedState: string = '';
+  @Input() selectedState: string = 'CO';
 
   @Output()
   onStateSelected: EventEmitter<string> = new EventEmitter<string>();
@@ -14,16 +14,18 @@ export class StatesDropdownComponent implements OnInit {
   state: DropdownLabelValue | undefined;
   states!: DropdownLabelValue[];
 
-  constructor() {}
+  constructor() {
+    this.states = this.options;
+    // this.state = this.states.find((s) => s.label === this.selectedState);
+  }
 
   onChange(event: any) {
-    this.state = this.states.find((s) => s.label === event.value.label);
+    // this.state = this.states.find((s) => s.label === event.value.label);
     this.onStateSelected.emit(event.value.label);
   }
 
   ngOnInit(): void {
-    this.states = this.options;
-    this.state = this.states.find((s) => s.label === this.selectedState);
+    
   }
 
   options = [
