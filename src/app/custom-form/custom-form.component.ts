@@ -24,17 +24,17 @@ export class CustomFormComponent implements OnInit {
   }
 
   onMississippi() {
-    this.onStateSelected('Mississippi');
+    this.onStateSelected('MS');
     console.log('onMississippi: ', this.selectedState);
   }
 
   onNebraska() {
-    this.onStateSelected('Nebraska');
+    this.onStateSelected('NE');
     console.log('onNebraska: ', this.selectedState);
   }
 
   onOhio() {
-    this.onStateSelected('Ohio');
+    this.onStateSelected('OH');
     console.log('onOhio: ', this.selectedState);
   }
 }
